@@ -23,14 +23,14 @@ export const connectToMongoDB = async () => {
     console.log("MongoDB is connected");
   } catch (error) {
     console.error("Failed to connect to MongoDB:", error);
-    process.exit(1); // Optional: Exit process if the connection fails
+  // Optional: Exit process if the connection fails
   }
 };
 
 export const getDB = () => {
-  if (!client) {
-    throw new Error("MongoDB client is not connected yet.");
-  }
+  // if (!client) {
+  //   throw new Error("MongoDB client is not connected yet.");
+  // }
   return client.db(); // Return the connected database
 };
 
