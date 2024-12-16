@@ -1,0 +1,32 @@
+
+<div class="row">
+    <% projects.forEach(project =>{ %>
+    <div class="col-md-4 ">
+        <div class="card mb-4">
+            <div class="card-body">
+                <input type="hidden" name="_id" value="<%= project._id %>">
+                <!-- <h5 class="card-title" type='hidden' ><%= project._id %></h5> -->
+                <h5
+                    class="card-subtitle mb-2 text-dark bglight p-3 fw-bold"><span
+                        class="text-danger fw-bold"> Project : </span> 
+                        <%=project._projectname %></h5>
+                <p class="card-text text-body-secondary"><span
+                        class="fw-bold">Description : </span> <%=project._desc%></p>
+                <p class="card-text"><span class="fw-bold">Author : </span> 
+                    <%=project._author %></p>
+                <p class="card-text"><span class="fw-bold">Priority : </span>
+                    <%=project._priority %></p>
+                <p class="card-text"><span class="fw-bold">Status : </span>
+                    <%=project._status %></p>
+                <p class="card-text"><span class="fw-bold">Progress : </span>
+                    <%=project._progress %> %</p>
+                <a href="/update-project/<%= project._id %>"
+                    class="btn btn-warning card-link m-1">Update</a>
+                <button class="btn btn-danger m-1" 
+                onclick="deleteProject('<%=project._id %>')">Delete</button>
+                <a href="/view-project/<%= project._id %>" class="btn btn-primary card-link m-1">View More</a>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>

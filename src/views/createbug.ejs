@@ -1,0 +1,65 @@
+
+
+<h1>Bug Tracker</h1>   
+<% if(id) { %>
+    <form action="/issue/filter/<%= id %> " method="get">
+        <div class="container bg-success-subtle ">
+        <div class="d-flex " style=" justify-content: center; gap:10px">
+        <label class="fw-bold">Filter by:</label><br>
+        
+        <input type="checkbox" name="bug" value="bug" id="bug">
+        <label for="bug">bug</label><br>
+        
+        <input type="checkbox" name="feature" value="feature" id="feature">
+        <label for="feature">feature</label><br>
+        
+        <input type="checkbox" name="documentation" value="documentation" id="documentation">
+        <label for="documentation">Documentation</label><br>
+        
+        <input type="checkbox" name="enhancement" value="enhancement" id="enhancement">
+        <label for="enhancement">Enhancement</label><br>
+        
+        <input type="checkbox" name="urgent" value="urgent" id="urgent">
+        <label for="urgent">urgent</label><br>
+        
+        <!-- <label for="search">Search:</label>
+        <input type="text" name="search" id="search" placeholder="Search for a bug"><br><br>
+         -->
+        <button class="button  text" type="submit">Apply</button>
+    </div></div>
+    </form>
+    <% } %>
+<table class="table table-striped table-success" border="2">
+    <thead>
+        <tr>
+            <th>Bug Title</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>Labels</th>
+            <th>Created At</th>
+            <th>Delete</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <% bugs.forEach((bug) => { %>
+            <tr>
+                <td><%= bug.bugTitle %></td>
+                <td><%= bug.bugDesc %></td>
+                <td><%= bug.bugauthor %></td>
+             
+                <td><%= bug.bugLabels %></td>
+              
+                <td><%= bug.createdAt %></td>
+                <td>
+                    <a class="btn btn-danger m-1" 
+                    href="/issue/delete/<%= bug._id %>">Delete</a>
+                    <!-- <a class="btn btn-danger m-1" 
+                    href="/issue/postissue/<%= bug.projectId %>">Delete</a> -->
+                </td> 
+                  
+            </tr>
+            
+        <% }) %>
+
+      

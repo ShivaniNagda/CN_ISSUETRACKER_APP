@@ -1,0 +1,51 @@
+<div class="container mb-5 p-5 rounded border border-info-subtle bg-success-subtle update-project"
+    style="padding-left: 8%; padding-right: 8%; margin: auto; gap: 3px; ">
+    <% if(viewproject) { %>
+    <form class="card row g-2 text-light">
+        <div class="card-header text-dark text-center mb-3">
+            <h3 class="fw-bold text-center">
+                Project Name : <span class="text"><%= viewproject._projectname %></span>
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="col-md-6 p-2">
+                <span for="_desc" class="text-dark fw-bold">Description : </span>
+                <span class="text-dark" id="projectDesc" name="_desc"><%= viewproject._desc %></span>
+            </div>
+
+            <div class="col-md-6 p-2">
+                <span for="_author" class="form-label text-dark fw-bold">Author : </span>
+                <span type="text" class="text-dark" id="author" name="_author"><%= viewproject._author %></span>
+            </div>
+
+            <div class="col-md-6 p-2">
+                <span for="_priority" class="text-dark fw-bold">Priority : </span>
+                <span id="priority" name="_priority" class="text-dark"><%= viewproject._priority %></span>
+            </div>
+
+            <div class="col-md-6 p-2">
+                <span for="_status" class="text-dark fw-bold">Status : </span>
+                <span id="status" name="_status" class="text-dark"><%= viewproject._status %></span>
+            </div>
+
+            <div class="col-md-6 p-2">
+                <span for="_progress" class="text-dark fw-bold">Progress (%) :</span>
+                <span type="number" class="text-dark" id="progress" name="_progress">
+                    <%= viewproject._progress %> %
+                </span>
+            </div>
+      
+
+        <!-- Additional Buttons -->
+        <div class="container">
+            <a href="/issue/createissue/<%= viewproject._id %>" class="btn btn-success mb-3 mt-5">
+                Create Issue
+            </a>
+            <a href="/issue/getissue/<%= viewproject._id %>" class="btn btn-success mb-3 mt-5">
+                Show Bugs
+            </a>
+        </div>  </div>
+        <!-- -----------------Filter Issue------------------------ -->
+    </form>
+    <% } %>
+</div>

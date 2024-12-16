@@ -1,0 +1,58 @@
+
+<div class="container mb-5 add_project body mt-5"
+    style="padding-left: 5%; padding-right: 5%;">
+    <% if(errorMessage) { %>
+    <h3 class="mt-2 mb-2 text text-light text-center ">Add New Project</h3>
+    <div class="alert alert-danger" role="alert">
+        <%=errorMessage%>
+    </div>
+    <%}%>
+    <form class="row g-2 text-light" action="/" method="post">
+        <div class="col-md-6">
+            <label for="_projectname" class="form-label">Project Name</label>
+            <input type="text" class="form-control" id="projectName"
+                name="_projectname">
+        </div>
+
+        <div class="col-12">
+            <label for="_desc" class="form-label">Project Description</label>
+            <textarea class="form-control" id="projectDesc" name="_desc"
+                rows="3"></textarea>
+        </div>
+
+        <div class="col-md-6">
+            <label for="_author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="_author">
+        </div>
+
+        <div class="col-md-4">
+            <label for="_priority" class="form-label">Priority</label>
+            <select id="priority" name="_priority" class="form-select">
+                <option selected>Choose...</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="_status" class="form-label">Status</label>
+            <select id="status" name="_status" class="form-select">
+                <option selected>Choose...</option>
+                <option value="Ongoing">Ongoing</option>
+                <option value="Completed">Completed</option>
+                <option value="On Hold">On Hold</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label for="_progress" class="form-label">Progress (%)</label>
+            <input type="number" class="form-control" id="progress"
+                name="_progress" min="0" max="100">
+        </div>
+
+        <div class="col-12 ">
+            <button type="submit" class="btn btn-primary">Add Project</button>
+        </div>
+    </form>
+</div>

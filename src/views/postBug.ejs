@@ -1,0 +1,39 @@
+<!-- Create Issue Modal -->
+      
+        <form action="/issue/postissue/<%= id %>" method="Post">
+            <div class="container p-2 bg-success-subtle rounded border">
+        
+           
+          <div class=" card-body p-3">
+            <div class="fw-bold text-center card-header">
+            <h2 class="fw-bold text-center card-header" >Create New Issue</h2>
+          </div>
+            <input type="hidden" id="projectId" name=projectId value=<%=id %> />
+          
+            <label for="bugTitle" class="form-label text-dark fw-bold">Title</label>
+            <input type="text" id="bugTitle" name="bugTitle" placeholder="Title" class="form-control mb-2" required />
+            <label for="bugDesc" class="form-label text-dark fw-bold">Description</label>
+            <textarea name="bugDesc" id="bugDesc" class="form-control mb-2" placeholder="Description" required></textarea>
+            <label for="bugauthor" class="form-label text-dark fw-bold">Author</label>
+            <input name="bugauthor" id="bugauthor" class="form-control mb-2" placeholder="Author.." required />
+            
+           <label for="bugLabels" class="form-label text-dark fw-bold">Labels</label>
+            <select id="bugLabels" name="bugLabels" class="form-select form-select mb-3" aria-label=".form-select-lg example"multiple >
+              <!-- <option selected>select issue</option> -->
+              <option value="bug">bug</option>
+              <option value="feature">feature</option>
+              <option value="documentation">documentation</option>
+              <option value="enhancement">enhancement</option>
+              <option value="urgent">urgent</option>
+              <!-- <option value="help">help</option> -->
+            </select>
+          </div>
+  
+          <div class="card-footer p-3">
+           
+            <!-- <a href="/issue/getissue" class="btn btn-primary">Create</a> -->
+            <button type="submit"class="btn btn-success">submit</button>
+        
+          </div></div>
+        </form>
+     

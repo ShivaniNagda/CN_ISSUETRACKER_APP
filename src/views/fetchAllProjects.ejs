@@ -1,0 +1,79 @@
+<h1 class="text-light text-center">Projects</h1>   
+<div class="container p-3">
+    <form action="/filter" method="get">
+        <div class="container bg-light-subtle p-3">
+            <div class="d-flex" style="justify-content: center; gap:10px">
+                <label class="fw-bold">Filter by:</label><br>
+
+                <!-- Author Filter -->
+                <!-- <label for="author">Author:</label> -->
+                <select name="author" id="author">
+                    <option value="">Select Author</option>
+                    <% projects.forEach((project) => { %>
+                        <option value="<%= project._author %>"><%=  project._author %></option>
+                    <% }) %>
+                </select><br>
+
+                <!-- Priority Filter -->
+                <!-- <label for="priority">Priority:</label> -->
+                <select name="priority" id="author">
+                    <option value="">Select Priority</option>
+                    <% projects.forEach((project) => { %>
+                        <option value="<%= project._priority %>"><%=  project._priority %></option>
+                    <% }) %>
+                </select><br>
+                <!-- Status Filter -->
+                <!-- <label for="status">Progress:</label> -->
+                <select name="status" id="status">
+                    <option value="">Select Status</option>
+                    <% projects.forEach((project) => { %>
+                        <option value="<%= project._status %>"><%=  project._status %></option>
+                    <% }) %>
+                </select><br>
+
+                <!-- Progress Filter -->
+                <!-- <label for="priority">Priority:</label> -->
+                <select name="progress" id="progress">
+                    <option value="">Select progress</option>
+                    <% projects.forEach((project) => { %>
+                        <option value="<%= project._progress %>"><%=  project._progress %></option>
+                    <% }) %>
+                </select><br>
+              
+
+                <!-- Search Filter -->
+                <label for="search">Search:</label>
+                <input type="text" name="search" id="search" placeholder="Search for an author"><br><br>
+
+                <!-- Apply Filters Button -->
+                <button class="button text" type="submit">Apply</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Project Table -->
+    <table class="table table-striped table-success" border="2">
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Progress</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% projects.forEach((project) => { %>
+                <tr>
+                    <td><%= project._projectname %></td>
+                    <td><%= project._desc %></td>
+                    <td><%= project._author %></td>
+                    <td><%= project._priority %></td>
+                    <td><%= project._status %></td>
+                    <td><%= project._progress %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

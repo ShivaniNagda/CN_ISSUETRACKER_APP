@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color:rgb(2, 3, 78) !important ;
+}
+
+.body{
+    background-color: rgb(2, 3, 78);
+}
+/* navbar */
+.navbar{
+    margin: 0px !important;
+    background:linear-gradient(260deg,rgb(247, 247, 200),rgb(253, 255, 255),rgb(141, 248, 248)) !important;
+    box-shadow: inset 4px 4px 4px rgb(193, 193, 193);
+    width: 100%;
+}
+
+  
+ .project_card{
+   margin-top: 20vh !important;
+ }
+ .add_project {
+    /* border: 2px solid white; */
+    box-shadow: inset 2px 2px 5px 5px rgba(255, 255, 255, 0.5);
+    padding: 20px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+/* additional Property for background */
+.bglight{
+    background-color: rgb(238, 236, 236) !important;
+    box-shadow: inset 3px 3px 3px gray;
+}
+.span{
+    border: 2px solid wheat !important;
+}
