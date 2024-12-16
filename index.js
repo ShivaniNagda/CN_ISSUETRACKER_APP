@@ -23,13 +23,13 @@ server.set("view engine","ejs");
 server.set("views",path.join(path.resolve(),"src","views"));
 
 // create an instance of TrackerController
-server.use("/",trackerRouter);
-server.use("/issue",issueRouter);
+server.use("https://cn-issuetracker-app.vercel.app",trackerRouter);
+server.use("https://cn-issuetracker-app.vercel.app/issue",issueRouter);
 
 
 server.use(express.static('src/views'))
 
-server.use('/',(req,res)=>{
+server.use('https://cn-issuetracker-app.vercel.app',(req,res)=>{
     res.render('pagenotFound.ejs')
 })
 
