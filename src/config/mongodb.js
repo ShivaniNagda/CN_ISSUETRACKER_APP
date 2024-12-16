@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config(); 
 
 // Ensure the DB_URL is being read correctly from the .env file
-const url = process.env.DB_URL || "mongodb://localhost:27017/trackerdb";
+const url = "mongodb+srv://Shivani:shivani1234@issuetracker.9nr8r.mongodb.net/?retryWrites=true&w=majority&appName=IssueTracker" || "mongodb://localhost:27017/trackerdb";
 if (!url) {
   console.log("DB_URL is not defined in the .env file.");
 }
