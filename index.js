@@ -1,4 +1,3 @@
-
 import "./env.js";
 
 import express from "express";
@@ -14,7 +13,7 @@ import cors from 'cors';
 const server = express();
 
 server.use(cors());
-server.use(express.static('public'))
+server.use(express.static("public"));
 server.use(ejsLayouts);
 server.use(express.json());
 server.use(express.urlencoded({extended:true}))
@@ -23,17 +22,16 @@ server.set("view engine","ejs");
 server.set("views",path.join(path.resolve(),"src","views"));
 
 // create an instance of TrackerController
-server.use("https://cn-issuetracker-app.vercel.app",trackerRouter);
-server.use("https://cn-issuetracker-app.vercel.app/issue",issueRouter);
+server.use("/",trackerRouter);
+server.use("/issue",issueRouter);
 
-
-server.use(express.static('src/views'))
-
-server.use('https://cn-issuetracker-app.vercel.app',(req,res)=>{
-    res.render('pagenotFound.ejs')
+server.use((req,res)=>{
+     res.status(404).render("pagenotFound.ejs");
 })
 
-server.listen(5555,()=>{
-    console.log('Server is listening on port 5555');
+// Start the server
+const PORT = process.env.PORT || 5555;
+server.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
     connectToMongoDB();
-}); 
+});
